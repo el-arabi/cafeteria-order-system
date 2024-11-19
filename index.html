@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria Order System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Session Info -->
+        <div class="session-info">
+            <input type="text" id="assistantName" placeholder="Assistant Name" class="form-input">
+            <input type="text" id="classroom" placeholder="Classroom" class="form-input">
+            <div id="datetime"></div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="order-section">
+            <input type="text" id="studentName" placeholder="Student Name" class="form-input">
+            <div class="product-search">
+                <input type="text" id="productSearch" placeholder="Search Products" class="form-input">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">All</button>
+                <button class="tab-btn" data-category="drinks">Drinks</button>
+                <button class="tab-btn" data-category="sweets">Sweets</button>
+                <button class="tab-btn" data-category="candy">Candy</button>
+                <button class="tab-btn" data-category="chips">Chips</button>
+                <button class="tab-btn" data-category="salty">Salty</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid"></div>
+
+            <!-- Custom Product Form -->
+            <button id="addCustomProduct" class="btn">Add Custom Product</button>
+            <div id="customProductForm" class="custom-product-form hidden">
+                <input type="text" id="customName" placeholder="Product Name" class="form-input">
+                <input type="number" id="customPrice" placeholder="Price" class="form-input">
+                <input type="number" id="customQuantity" placeholder="Quantity" class="form-input">
+                <button id="saveCustomProduct" class="btn">Add to Order</button>
+            </div>
+
+            <!-- Current Order -->
+            <div class="current-order">
+                <h3>Current Order</h3>
+                <div id="orderItems"></div>
+                <div class="payment-section">
+                    <input type="number" id="amountPaid" placeholder="Amount Paid" class="form-input">
+                    <div id="changeAmount" class="change-amount"></div>
+                </div>
+                <button id="addOrder" class="btn">Add to Orders List</button>
+            </div>
+        </div>
+
+        <!-- Orders List -->
+        <div class="orders-list">
+            <h3>Orders List</h3>
+            <div id="ordersList"></div>
+            <button id="generateReceipt" class="btn">Generate Receipt</button>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/receipt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.15/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
